@@ -21,7 +21,7 @@ public class PersonaController {
     @Autowired
     private IpersonaService service;
     
-    @GetMapping("/lista")
+    @GetMapping("")
     public String listaPersonas(ModelMap modelo) {
         modelo.addAttribute("personas", service.listarPersona());
         return "index";
@@ -36,7 +36,7 @@ public class PersonaController {
     @PostMapping("/save")
     public String save(@Valid Persona p){
         service.save(p);
-        return "redirect:/lista";
+        return "redirect:/";
     }
 
     //@DeleteMapping("/")  
